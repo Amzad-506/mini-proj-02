@@ -3,10 +3,16 @@ package com.example.service;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.example.bean.User;
+import com.example.repo.UserRepo;
 
 public class UserServiceImpl implements Service{
-
+	
+	@Autowired
+	private UserRepo ur;
+	
 	@Override
 	public Map<Integer, String> findCountry() {
 		Map<Integer, String> m=new HashMap<Integer,String>();
@@ -28,20 +34,37 @@ public class UserServiceImpl implements Service{
 
 	@Override
 	public boolean addUser(User user) {
-		// TODO Auto-generated method stub
-		return false;
+		User save = ur.save(user);
+		if(save.getUid()==null) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
 	public boolean isEmailUnique(String email) {
-		// TODO Auto-generated method stub
+		User findByEmail = ur.findByEmail(email);
+		if(email.equals(findByEmail.getEmail())) {
+			return true;
+		}
 		return false;
 	}
 
 	@Override
 	public String loginCheck(String email, String pwd) {
-		// TODO Auto-generated method stub
-		return null;
+		User findByEmail = ur.findByEmail(email);
+		String msg="";
+		if(findByEmail.getUid()==null) {
+			msg="User Doesn't Exist";
+		}
+		
+		if(email.equals(findByEmail.getEmail()) && pwd.equals(findByEmail.getPwd())) {
+			msg="valid Credentials";
+		}else {
+			msg="Invalid Password";
+		}
+		return msg;
+		
 	}
 
 	@Override
