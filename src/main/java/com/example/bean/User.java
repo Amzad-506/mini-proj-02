@@ -21,7 +21,7 @@ public class User {
 	private String state;
 	private String city;
 	private String pwd;
-	private boolean isActive;
+	private String isActive;
 	public Integer getUid() {
 		return uid;
 	}
@@ -88,11 +88,18 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public boolean isActive() {
+	public String isActive() {
 		return isActive;
 	}
-	public void setActive(boolean isActive) {
+	public void setActive(String isActive) {
 		this.isActive = isActive;
 	}
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", phone=" + phone
+				+ ", dob=" + dob + ", gender=" + gender + ", country=" + country + ", state=" + state + ", city=" + city
+				+ ", pwd=" + pwd + ", isActive=" + isActive + "]";
+	}
+	
 	
 }

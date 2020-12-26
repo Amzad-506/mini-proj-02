@@ -12,6 +12,24 @@ public class City {
 	private int ctid;
 	private String cname;
 	private int sid;
+	public int getCtid() {
+		return ctid;
+	}
+	public void setCtid(int ctid) {
+		this.ctid = ctid;
+	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
 	
 
 }

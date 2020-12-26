@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.example.bean.User;
 
-public interface Service {
+public interface ServiceIntr {
 
 	public Map<Integer, String> findCountry();
 	public Map<Integer, String> findState(Integer cid);
@@ -17,5 +17,7 @@ public interface Service {
 	public boolean isTempPwdValid(String email,String pwd);
 	
 	public boolean unlockAccount(String email,String npwd);
+	
+	public String forgotPassword(String email);
 	
 }
