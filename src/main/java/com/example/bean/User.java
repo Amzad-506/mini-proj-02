@@ -70,6 +70,12 @@ public class User {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	public String getIsActive() {
+		return isActive;
+	}
+	public void setIsActive(String isActive) {
+		this.isActive = isActive;
+	}
 	public String getState() {
 		return state;
 	}
@@ -88,12 +94,7 @@ public class User {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String isActive() {
-		return isActive;
-	}
-	public void setActive(String isActive) {
-		this.isActive = isActive;
-	}
+	
 	@Override
 	public String toString() {
 		return "User [uid=" + uid + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", phone=" + phone

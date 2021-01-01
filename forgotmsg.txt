@@ -1,0 +1,13 @@
+Hi  {FNAME}, {LNAME} :
+<br/>
+
+Welcome to IES family, Your Password is SAFE with us<br/>
+<br/>
+
+Your Password :<font color="red" size="7"> {TEMP-PWD}</font><br/>
+<br/>
+
+<br/>
+
+Thanks & Regards,<br/>
+IES Team.<br/>
