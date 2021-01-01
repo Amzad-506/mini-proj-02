@@ -12,7 +12,7 @@ import com.example.bean.Uvalidate;
 import com.example.service.ServiceIntr;
 import com.example.service.UserServiceImpl;
 
-@RestController("/unlock")
+@RestController
 public class UnlockAccountRestController {
 	
 	@Autowired
@@ -23,7 +23,7 @@ public class UnlockAccountRestController {
 			)
 	public ResponseEntity<String> unlockaccount(@RequestBody Uvalidate uv){
 		boolean tempPwdValid = serv.isTempPwdValid(uv.getEmail(),uv.getTpwd());
-		if(tempPwdValid==true) {
+		if(tempPwdValid) {
 			boolean unlockAccount = serv.unlockAccount(uv.getEmail(), uv.getRpwd());
 			return new ResponseEntity<String>("User Account Unlocked",HttpStatus.CREATED);
 		}

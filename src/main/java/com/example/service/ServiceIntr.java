@@ -20,4 +20,6 @@ public interface ServiceIntr {
 	
 	public String forgotPassword(String email);
 	
+	public boolean sendAccountUnlockEmail(String sub,String body,String to);
+	
 }
